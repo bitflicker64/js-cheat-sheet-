@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JavaScript Cheat Sheet</title>
+<link rel="stylesheet" href="clean.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <h1>JavaScript Cheat Sheet</h1>
+</header>
+
+<main class="container">
+
+    <section class="panel">
+        <h2>Basics</h2>
+        <pre><code>On page script
+&lt;script type="text/javascript"&gt; ... &lt;/script&gt;
+
+Include external JS file
+&lt;script src="filename.js"&gt;&lt;/script&gt;
+
+Delay - 1 second timeout
+setTimeout(function () {}, 1000);
+
+Functions
+function addNumbers(a, b) {
+    return a + b;
+}
+x = addNumbers(1, 2);
+
+Edit DOM element
+document.getElementById("elementID").innerHTML = "Hello World!";
+
+Output
+console.log(a);
+document.write(a);
+alert(a);
+confirm("Really?");
+prompt("Your age?","0");
+
+Comments
+/* Multi line comment */
+// One line</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Loops</h2>
+        <pre><code>For Loop
+for (var i = 0; i &lt; 10; i++) {
+    document.write(i + ": " + i*3 + "&lt;br/&gt;");
+}
+
+var sum = 0;
+for (var i = 0; i &lt; a.length; i++) {
+    sum += a[i];
+}
+
+html = "";
+for (var i of custOrder) {
+    html += "&lt;li&gt;" + i + "&lt;/li&gt;";
+}
+
+While Loop
+var i = 1;
+while (i &lt; 100) {
+    i *= 2;
+    document.write(i + ", ");
+}
+
+Do While Loop
+var i = 1;
+do {
+    i *= 2;
+    document.write(i + ", ");
+} while (i &lt; 100);
+
+Break
+for (var i = 0; i &lt; 10; i++) {
+    if (i == 5) break;
+    document.write(i + ", ");
+}
+
+Continue
+for (var i = 0; i &lt; 10; i++) {
+    if (i == 5) continue;
+    document.write(i + ", ");
+}
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>If / Else</h2>
+        <pre><code>if ((age >= 14) && (age &lt; 19)) {
+    status = "Eligible.";
+} else {
+    status = "Not eligible.";
+}
+
+Switch Statement
+switch (new Date().getDay()) {
+case 6:
+    text = "Saturday";
+    break;
+case 0:
+    text = "Sunday";
+    break;
+default:
+    text = "Whatever";
+}
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Variables</h2>
+        <pre><code>var a;
+var b = "init";
+var c = "Hi" + " " + "Joe";
+var d = 1 + 2 + "3";
+var e = [2,3,5,8];
+var f = false;
+var g = /()/;
+var h = function(){};
+
+const PI = 3.14;
+var a = 1, b = 2, c = a + b;
+let z = 'zzz';
+
+"use strict";
+x = 1; // throws error
+
+Values:
+false, true
+18, 3.14, 0b10011, 0xF6, NaN
+"flower", "John"
+undefined, null, Infinity
+
+Operators:
+a = b + c - d;
+a = b * (c / d);
+x = 100 % 48;
+a++; b--;
+
+Bitwise:
+&  AND
+|  OR
+~  NOT
+^  XOR
+&lt;&lt; left shift
+&gt;&gt; right shift
+&gt;&gt;&gt; zero-fill right shift
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Data Types</h2>
+        <pre><code>var age = 18;
+var name = "Jane";
+var name = {first:"Jane", last:"Doe"};
+var truth = false;
+var sheets = ["HTML","CSS","JS"];
+var a; typeof a;
+var a = null;
+
+Objects:
+var student = {
+    firstName:"Jane",
+    lastName:"Doe",
+    age:18,
+    height:170,
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+student.age = 19;
+student[age]++;
+name = student.fullName();
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Strings</h2>
+        <pre><code>var abc = "abcdefghijklmnopqrstuvwxyz";
+var esc = "I don't \n know";
+var len = abc.length;
+
+abc.indexOf("lmno");
+abc.lastIndexOf("lmno");
+abc.slice(3, 6);
+abc.replace("abc", "123");
+abc.toUpperCase();
+abc.toLowerCase();
+abc.concat(" ", str2);
+abc.charAt(2);
+abc[2];
+abc.charCodeAt(2);
+abc.split(",");
+abc.split("");
+128..toString(16);
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Events</h2>
+        <pre><code>&lt;button onclick="myFunction()"&gt;Click here&lt;/button&gt;
+
+Mouse:
+onclick, onmouseenter, onmouseleave, onmousemove...
+
+Keyboard:
+onkeydown, onkeypress, onkeyup...
+
+Form:
+onblur, onchange, onsubmit...
+
+Drag:
+ondrag, ondrop...
+
+Touch:
+ontouchstart, ontouchmove...
+
+And more...
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Numbers & Math</h2>
+        <pre><code>var pi = 3.141;
+
+pi.toFixed(0);
+pi.toFixed(2);
+pi.toPrecision(2);
+pi.valueOf();
+
+Number(true);
+Number(new Date());
+parseInt("3 months");
+parseFloat("3.5 days");
+
+Math.PI;
+Math.round(4.5);
+Math.pow(2,8);
+Math.sqrt(49);
+Math.abs(-3.14);
+Math.ceil(3.14);
+Math.floor(3.99);
+Math.sin(0);
+Math.min(0,3,-2,2);
+Math.random();
+Math.floor(Math.random()*5)+1;
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Dates</h2>
+        <pre><code>var d = new Date();
+
+d.getDate();
+d.getDay();
+d.getFullYear();
+d.getHours();
+d.getMinutes();
+d.getSeconds();
+d.getMilliseconds();
+d.getTime();
+
+d.setDate(d.getDate()+7);
+d.setFullYear(...);
+d.setMonth(...);
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Arrays</h2>
+        <pre><code>var dogs = ["Bulldog","Beagle","Labrador"];
+
+dogs[1];
+dogs[0] = "Bull Terier";
+
+for (var i = 0; i &lt; dogs.length; i++) {
+    console.log(dogs[i]);
+}
+
+Methods:
+toString
+join
+pop
+push
+shift
+unshift
+splice
+slice
+sort
+reverse
+concat
+filter
+map
+reduce
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Global Functions</h2>
+        <pre><code>eval();
+String(23);
+(23).toString();
+Number("23");
+decodeURI();
+encodeURI();
+decodeURIComponent();
+encodeURIComponent();
+isFinite();
+isNaN();
+parseFloat();
+parseInt();
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Regular Expressions</h2>
+        <pre><code>var a = str.search(/CheatSheet/i);
+
+Modifiers:
+i, g, m
+
+Patterns:
+/d digit
+/s whitespace
+/b word boundary
+n+ one or more
+n? zero or one
+^ start
+$ end
+[...] character set
+(...) group
+a{2,5} repetition
+[:punct:]
+[:space:]
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Errors</h2>
+        <pre><code>try {
+    undefinedFunction();
+} catch(err) {
+    console.log(err.message);
+}
+
+throw "My error message";
+
+Input validation:
+var x = document.getElementById("mynum").value;
+
+try {
+    if (x == "") throw "empty";
+    if (isNaN(x)) throw "not a number";
+} catch(err) {
+    document.write("Input is " + err);
+} finally {
+    document.write("&lt;br/&gt;Done");
+}
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>JSON</h2>
+        <pre><code>var str = '{"names":[{"first":"Hakuna","lastN":"Matata"},{"first":"Jane","lastN":"Doe"}]}';
+obj = JSON.parse(str);
+document.write(obj.names[1].first);
+
+Send:
+var myObj = {name:"Jane", age:18, city:"Chicago"};
+var myJSON = JSON.stringify(myObj);
+window.location = "demo.php?x=" + myJSON;
+
+LocalStorage:
+localStorage.setItem("testJSON", myJSON);
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+</code></pre>
+    </section>
+
+    <section class="panel">
+        <h2>Promises</h2>
+        <pre><code>function sum(a, b) {
+    return Promise(function(resolve, reject) {
+        setTimeout(function() {
+            if (typeof a !== "number" || typeof b !== "number") {
+                return reject(new TypeError("Inputs must be numbers"));
+            }
+            resolve(a + b);
+        }, 1000);
+    });
+}
+
+var myPromise = sum(10, 5);
+myPromise.then(function(result) {
+    document.write(result);
+}).catch(function(err) {
+    console.error(err);
+});
+
+States:
+pending, fulfilled, rejected
+
+Methods:
+Promise.all, Promise.race, Promise.reject, Promise.resolve</code></pre>
+    </section>
+
+</main>
+
+</body>
+</html>
